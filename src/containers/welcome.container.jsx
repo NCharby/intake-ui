@@ -8,11 +8,11 @@ import {
 
 
 export default function NewContainer(props){
-
+    const name = props.data['Preferred Name']
     return (
         <Container>
-            <Typography variant="h1" component="h1">
-            Welcome Name
+            <Typography variant="h2" component="h1">
+            Welcome {name}
             </Typography>
         </Container>
     )

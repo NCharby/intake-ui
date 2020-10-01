@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 import {
-	Container
+	Container,
+	CircularProgress
 } from './components/index.js'
+
+import API from './api/index'
 
 import {  
 	HeaderContainer,
-	LoaderContainer,
 	ProcessContainer,
 	WelcomeContainer
 } from './containers/index.js'
@@ -23,33 +25,57 @@ import {
 
 function App() {
 	const [stepState, setStepState] = useState(0)
+	const [isLoading, setIsLoading] = useState(true)
+    const [hasData, setHasData] = useState(false)
+    const [data, setData] = useState({})
+
+    useEffect(() => {
+        const fetchData = async () => {
+            setIsLoading(true)
+            const result = await API.fetchRecord()
+            setData(result)
+            
+            //it's empty?
+            if(Object.entries(result).length === 0){
+                setHasData(false)
+            } else {
+                setHasData(true)
+            }
+            setIsLoading(false)
+        }
+        fetchData()
+    }, [])
 
   	return (
-    	<Router>
-      		<Container className="App">
+		<Router>
+			<Container className="App">
 				<HeaderContainer step={stepState}/>
+				{isLoading && !hasData? (
+					<CircularProgress size={100}/>
+				): (
 				<Switch>
 
 					<Route
 						path="/:id/details"
 					>
-						<ProcessContainer step={stepState} setStep={setStepState} />
+						<ProcessContainer step={stepState} setStep={setStepState} data={data}/>
 					</Route>
 					{/* Entry point for a permalink */}
 					<Route
 						path="/:id"
 					>
-						<LoaderContainer step={stepState} setStep={setStepState} ChildView={WelcomeContainer}/>
+						<WelcomeContainer step={stepState} setStep={setStepState} data={data}/>
 					</Route>
 					
 
 					{/* 404 state */}
-					<Route path="*">
+					{/* <Route path="*">
 						<Redirect to="/new"/>
-					</Route>
+					</Route> */}
 				</Switch>
+				)}
 			</Container>
-   		</Router>
+		</Router>
   );
 }
 

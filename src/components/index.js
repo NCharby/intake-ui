@@ -1,6 +1,7 @@
 //shim MUI
 import {
     Container,
+    CircularProgress,
     Box,
     Grid,
     Stepper,
@@ -12,12 +13,14 @@ import {
     Card,
     Select,
     Button,
-    TextField
+    TextField,
+    Typography
 } from '@material-ui/core'
 
 
 export {
     Container,
+    CircularProgress,
     Box,
     Grid,
     Stepper,
@@ -29,5 +32,6 @@ export {
     Card,
     Select,
     Button,
-    TextField
+    TextField,
+    Typography
 } 

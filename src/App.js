@@ -8,6 +8,7 @@ import {
 
 import {  
 	HeaderContainer,
+	LoaderContainer,
 	ProcessContainer,
 	WelcomeContainer
 } from './containers/index.js'
@@ -38,7 +39,7 @@ function App() {
 					<Route
 						path="/:id"
 					>
-						<WelcomeContainer step={stepState} setStep={setStepState} />
+						<LoaderContainer step={stepState} setStep={setStepState} ChildView={WelcomeContainer}/>
 					</Route>
 					
 

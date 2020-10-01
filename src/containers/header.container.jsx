@@ -1,23 +1,17 @@
 import React from 'react';
 import logo from '../logo.svg';
 
+import {
+	Container
+} from '../components/index.js'
+
 function HeaderContainer() {
-  return (
-    <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-    </header>
-  );
+	return (
+		<Container>
+			<img src={logo} className="App-logo" alt="logo" />
+			
+		</Container>
+	);
 }
 
 export default HeaderContainer;

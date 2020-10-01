@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import {
+	Container
+} from './components/index.js'
 
-import { 
-	HomeContainer, 
-	HeaderContainer 
+import {  
+	HeaderContainer,
+	ProcessContainer,
+	WelcomeContainer
 } from './containers/index.js'
 
 import {
@@ -21,30 +25,29 @@ function App() {
 
   	return (
     	<Router>
-      		<div className="App">
+      		<Container className="App">
 				<HeaderContainer step={stepState}/>
 				<Switch>
-					{/* New Person we don't know about */}
+
 					<Route
-						path="/new"
-						exact
+						path="/:id/details"
 					>
-						<HomeContainer step={stepState} setStep={setStepState} />
+						<ProcessContainer step={stepState} setStep={setStepState} />
 					</Route>
 					{/* Entry point for a permalink */}
 					<Route
 						path="/:id"
 					>
-						<HomeContainer step={stepState} setStep={setStepState} />
+						<WelcomeContainer step={stepState} setStep={setStepState} />
 					</Route>
-
+					
 
 					{/* 404 state */}
 					<Route path="*">
 						<Redirect to="/new"/>
 					</Route>
 				</Switch>
-			</div>
+			</Container>
    		</Router>
   );
 }

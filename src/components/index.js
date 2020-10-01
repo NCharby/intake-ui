@@ -13,6 +13,7 @@ import {
     Card,
     Select,
     Button,
+    Icon,
     TextField,
     Typography
 } from '@material-ui/core'
@@ -32,6 +33,7 @@ export {
     Card,
     Select,
     Button,
+    Icon,
     TextField,
     Typography
 } 

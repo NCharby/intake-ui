@@ -55,15 +55,11 @@ function App() {
 				): (
 				<Switch>
 
-					<Route
-						path="/:id/details"
-					>
+					<Route path="/:id/details">
 						<ProcessContainer step={stepState} setStep={setStepState} data={data}/>
 					</Route>
 					{/* Entry point for a permalink */}
-					<Route
-						path="/:id"
-					>
+					<Route path="/:id">
 						<WelcomeContainer step={stepState} setStep={setStepState} data={data}/>
 					</Route>
 					

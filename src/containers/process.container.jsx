@@ -1,40 +1,40 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
+    Paper,
     Stepper,
     Step,
     StepLabel,
-    Button
+    Button,
+    Typography
 } from '../components/index.js'
 
-
-
-import Typography from '@material-ui/core/Typography';
+import {
+    ContactContainer,
+    BadgeContainer
+} from '../steps/index.js'
 
 
 function getSteps() {
-  return ['Contact Info', 'Add Badge Details', 'Edit Badge Photo', 'Select Meal Options'];
+  return ['Contact Info', 'Add Badge Details', 'Edit Badge Photo'];
 }
 
-function getStepContent(step) {
+function getStepContent(step, data) {
   switch (step) {
     case 0:
-      return 'Select campaign settings...';
+      return <ContactContainer data={data}/>;
     case 1:
-      return 'What is an ad group anyways?';
+      return <BadgeContainer data={data}/>;
     case 2:
-      return 'This is the bit I really care about!';
-    case 3:
-      return 'Case 3';
+      return <ContactContainer data={data}/>;
     default:
       return 'Unknown step';
   }
 }
 
 export default function HorizontalLinearStepper(props) {
-    const {step, setStep} = props
+    const {step, setStep, data} = props
     const steps = getSteps();
-
 
     const handleNext = () => {
         setStep((prevActiveStep) => prevActiveStep + 1);
@@ -66,7 +66,9 @@ export default function HorizontalLinearStepper(props) {
                 </div>
                 ) : (
                 <div>
-                    <Typography>{getStepContent(step)}</Typography>
+                    <Paper square style={{margin: "20px 0", padding: "20px 10px 30px"}}>
+                        {getStepContent(step, data)}
+                    </Paper>
                     <div>
                     <Button disabled={step === 0} onClick={handleBack}>
                         Back

@@ -15,8 +15,23 @@ import {
     Button,
     Icon,
     TextField,
-    Typography
+    FormControl,
+    Typography,
+    InputAdornment
 } from '@material-ui/core'
+
+
+import { makeStyles } from '@material-ui/core/styles';
+
+export const inputStyles = makeStyles((theme) => ({
+    inputSpace: {
+        marginBottom: theme.spacing(2)
+    },
+}));
+
+
+
+
 
 
 export {
@@ -35,5 +50,7 @@ export {
     Button,
     Icon,
     TextField,
-    Typography
+    FormControl,
+    Typography,
+    InputAdornment
 } 

@@ -59,15 +59,18 @@ function App() {
 						<ProcessContainer step={stepState} setStep={setStepState} data={data}/>
 					</Route>
 					{/* Entry point for a permalink */}
-					<Route path="/:id">
+					<Route exact path="/:id">
 						<WelcomeContainer step={stepState} setStep={setStepState} data={data}/>
 					</Route>
 					
+					<Route path="/">
+						<ProcessContainer step={stepState} setStep={setStepState}/>
+					</Route>
 
 					{/* 404 state */}
-					{/* <Route path="*">
-						<Redirect to="/new"/>
-					</Route> */}
+					<Route path="*">
+						<Redirect to="/"/>
+					</Route>
 				</Switch>
 				)}
 			</Container>

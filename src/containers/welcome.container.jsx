@@ -15,8 +15,6 @@ import {
 function WelcomeContainer(props){
     const name = props.data['Preferred Name']
     const { history, match } = props
-    
-    console.log(props)
 
     const onNextClick = function() {
         const { id } = match.params

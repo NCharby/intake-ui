@@ -1,18 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { TBL_FIELDS } from '../api/config'
 import {
     Container,
-    Button,
     TextField,
     Typography,
-    InputAdornment,
-    inputStyles
+    InputAdornment
 } from '../components/index.js'
 
-
-
-
-
+import { inputStyles } from '../styles/index'
 
 export default function BadgeForm(props) {
     const { data } = props

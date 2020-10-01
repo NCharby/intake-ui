@@ -24,7 +24,7 @@ import {
 } from "react-router-dom";
 
 function App() {
-	const [stepState, setStepState] = useState(0)
+	const [stepState, setStepState] = useState(2)
 	const [isLoading, setIsLoading] = useState(true)
     const [hasData, setHasData] = useState(false)
     const [data, setData] = useState({})

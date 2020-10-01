@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import {
     Paper,
     Stepper,
@@ -11,7 +10,8 @@ import {
 
 import {
     ContactContainer,
-    BadgeContainer
+    BadgeContainer,
+    PhotoContainer
 } from '../steps/index.js'
 
 
@@ -26,7 +26,7 @@ function getStepContent(step, data) {
     case 1:
       return <BadgeContainer data={data}/>;
     case 2:
-      return <ContactContainer data={data}/>;
+      return <PhotoContainer data={data}/>;
     default:
       return 'Unknown step';
   }

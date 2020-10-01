@@ -1,3 +1,6 @@
+import CropControls from './cropCrontrols.component'
+
+
 //shim MUI
 import {
     Container,
@@ -12,6 +15,7 @@ import {
     Paper,
     Card,
     Select,
+    Slider,
     Button,
     Icon,
     TextField,
@@ -19,20 +23,6 @@ import {
     Typography,
     InputAdornment
 } from '@material-ui/core'
-
-
-import { makeStyles } from '@material-ui/core/styles';
-
-export const inputStyles = makeStyles((theme) => ({
-    inputSpace: {
-        marginBottom: theme.spacing(2)
-    },
-}));
-
-
-
-
-
 
 export {
     Container,
@@ -47,10 +37,14 @@ export {
     Paper,
     Card,
     Select,
+    Slider,
     Button,
     Icon,
     TextField,
     FormControl,
     Typography,
-    InputAdornment
+    InputAdornment,
+
+
+    CropControls
 } 

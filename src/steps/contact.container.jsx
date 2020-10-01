@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { TBL_FIELDS } from '../api/config'
 import {
     Container,
-    Paper,
-    Grid,
-    Select,
-    Button,
     TextField,
-    Typography,
-    inputStyles
+    Typography
 } from '../components/index.js'
 
+import { inputStyles } from '../styles/index'
 
 export default function ContactForm(props) {
     const { data } = props
